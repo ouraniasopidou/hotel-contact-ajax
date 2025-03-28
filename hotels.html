@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<HTML LANG="EN">
+<HEAD>
+<META CHARSET="UTF=08">
+<TITLE> WEBSITE10 </TITLE>
+
+<SCRIPT>
+
+function fetch(hotels)
+{
+var req;
+if(window.XMLHttpRequest)
+{
+req=new XMLHttpRequest();
+}
+else 
+{
+req=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+req.onreadystatechange=function()
+
+{
+if(req.readyState==4 && req.status==200)
+{
+document.getElementById("box").innerHTML=req.responseText;
+}
+}
+
+req.open("GET",hotels,true);
+req.send();
+}
+
+
+
+function fetch2(hotels)
+{
+var req2;
+if(window.XMLHttpRequest)
+{
+req2=new XMLHttpRequest();
+}
+else 
+{
+req2=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+
+req2.onreadystatechange=function()
+
+{
+if(req2.readyState==4 && req2.status==200)
+{
+document.getElementById("box2").innerHTML=req2.responseText;
+}
+}
+
+req2.open("GET",hotels,true);
+req2.send();
+}
+
+
+
+
+function fetch3(hotels)
+{
+var req3;
+if(window.XMLHttpRequest)
+{
+req3=new XMLHttpRequest();
+}
+else 
+{
+req3=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+
+req3.onreadystatechange=function()
+
+{
+if(req3.readyState==4 && req3.status==200);
+{
+document.getElementById("box3").innerHTML=req3.responseText;
+}
+}
+
+req3.open("GET",hotels,true);
+req3.send();
+}
+
+</script>
+<style>
+
+#box{
+height:140px;
+width:300px;
+padding:5px;
+line-height:25px; }
+
+#box2{
+height:140px;
+width:300px;
+padding:5px;
+line-height:25px; }
+
+#box3{
+height:140px;
+width:300px;
+padding:5px;
+line-height:25px; }
+
+</style>
+
+</head>
+
+<body style="background-image:url(hotels.jpg); background-size:100%; background-repeat:no-repeat; color:yellow;">
+
+<h1> Grand Hotel </h1>
+
+<div id="box"> <h3> Grand Hotel London </h3> </div>
+
+<br>
+
+<div id="box2"> <h3> Grand Hotel Athens </h3> </div>
+
+<br>
+
+<div id="box3"> <h3> Grand Hotel Paris </h3> </div>
+
+<br>
+
+<form>
+
+Grand Hotel London <br>
+<input type="button" value="Contact us" onclick="fetch('hotels.php?select=1')">
+
+<br>
+
+Grand Hotel Athens <br>
+<input type="button" value="Contact us" onclick="fetch2('hotels.php?select=2')">
+
+<br>
+
+Grand Hotel Paris <br>
+<input type="button" value="Contact us" onclick="fetch3('hotels.php?select=3')">
+
+</form>
+</body>
+</html>
+
